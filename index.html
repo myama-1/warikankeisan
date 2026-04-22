@@ -350,13 +350,13 @@
 
                 const expenseLines = validExpenses.map((e, i) => `  ${i + 1}. ${e.toLocaleString()}円`).join('\n');
                 lastShareText = [
-                    `一人あたり：${perPerson.toLocaleString()}円`,
+                    '【割り勘計算結果】',
+                    '──────────────',
+                    `1人あたり：${perPerson.toLocaleString()}円`,
                     '──────────────',
                     `人数：${selectedPeople}人`,
-                    '',
                     '内訳',
                     expenseLines || '  なし',
-                    '',
                     `合計：${total.toLocaleString()}円`,
                 ].join('\n');
 
