@@ -245,7 +245,9 @@
         <!-- 支出入力 -->
         <div>
             <div class="field-label">支出金額（1行に1つ）</div>
-            <textarea id="expenseInput" placeholder="1000&#10;500&#10;750&#10;1200"></textarea>
+            <textarea id="expenseInput" placeholder="1000&#10;500&#10;750&#10;1200"
+                autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"
+                inputmode="decimal"></textarea>
         </div>
 
         <!-- 人数 -->
@@ -350,14 +352,14 @@
 
                 const expenseLines = validExpenses.map((e, i) => `  ${i + 1}. ${e.toLocaleString()}円`).join('\n');
                 lastShareText = [
-                    '【割り勘計算結果】',
-                    `人数: ${selectedPeople}人`,
+                    `一人あたり：${perPerson.toLocaleString()}円`,
+                    '──────────────',
+                    `人数：${selectedPeople}人`,
                     '',
-                    '内訳:',
+                    '内訳',
                     expenseLines || '  なし',
                     '',
-                    `合計金額: ${total.toLocaleString()}円`,
-                    `一人当たり: ${perPerson.toLocaleString()}円`,
+                    `合計：${total.toLocaleString()}円`,
                 ].join('\n');
 
                 const shareBtn = document.getElementById('shareBtn');
